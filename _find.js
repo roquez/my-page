@@ -14,13 +14,13 @@
         case "everywhere":
         cat = 0;
         break;
-        case "men_and_animals":
+        case "category_1":
         cat = 1;
         break;
-        case "women_and_animals":
+        case "category_2":
         cat = 2;
         break;
-        case "animals":
+        case "category_3":
         cat = 3;
         break;
         default:
@@ -46,9 +46,8 @@
                     resultCallback = function(){};
                     var tt;
                     $.each(data.result, function(index, element) { 
-                        $("ul.videos").append($('<li class="video"></li>').append($('<div class="video-img"></div>').append($('<a data-id="'+ element.movie_id + '" href="/movie/' + element.path + '"></a>').append(
-                            $('<img src="https://www.gaybeast.com/thumbnails/480x320/' + element.path + '.jpg" width="260" height="173">').on('error', function() { showThMsg(this) })
-                            ).append('<span class="video-time">' + element.duration + '</span>'))).append('<div class="video-info"><span class="video-title"><a href="/movie/' + element.path + '">' + element.title + '</a></span></div>'));
+                        $("ul.videos").append($('<li class="video"></li>').append($('<div class="video-img"></div>').append($('<a data-id="0" href="#"></a>').append(
+                            $('<img src="/thumb.png" width="260" height="173">')).append('<span class="video-time">' + element.rating + '</span>'))).append('<div class="video-info"><span class="video-title"><a href="#">' + element.title + '</a></span></div>'));
                     });
                     if(data.result.length === 0){
                         tt = "No results for: ";
@@ -56,35 +55,13 @@
                     else{
                         tt = "Search results for: ";
                     }
-                    document.title = "Search \u2219 " + data.query + " | Free Premium Bestiality Movies";
+                    document.title = "Search \u2219 " + data.query + " - my-page";
                     $("#s-title").text(tt + data.query).show();
                     buildPaginationInf(pagenum, pagepath, data.next);
                 }
                 if(documentReady){
                     resultCallback();
                 }            
-            },
-            error: function(e){
-                if(!retried){
-                    dataUrl = getDataUrl(_app.datadomain);
-                    timeout = 3500;
-                    retried = true;
-                    getData();
-                }
-                else{
-                    resultCallback = function(){
-                        resultCallback = function(){};
-                        var totalTime = new Date().getTime() - ajaxTime;
-                        var additionalInfo = '';
-                        if(totalTime < 100 && e.status === 0){
-                            additionalInfo = '<p>' + _app.adblockMsg + '</p>';
-                        }
-                        $('#error-msg span').text(_app.errMsg).append($(additionalInfo)).parent().show();
-                    }
-                    if(documentReady){
-                        resultCallback();
-                    }
-                }
             }
         });
     }
@@ -105,35 +82,7 @@
     }
 
     function getDataUrl(datadomain){
-        return datadomain + "search.php?q=" + query.toLowerCase() + "&cat=" + cat + "&start=" + (pagenum - 1);
-    }
-
-    function showThMsg(img){
-        unloadedImages.push(img);
-        if(!thAlertVisible){
-            thAlertVisible = true;
-            if (typeof(Storage) !== "undefined") {
-                var i = localStorage.getItem("_resth");
-                if(i !== null && (Date.now() < parseInt(i))){
-                    return;
-                }
-            }
-            $('#info-msg span').html('Thumbnails not loading? Just open and close <a href="https://www.gaybeast.com/t" id="a02" target="_blank">this link</a> to fix it.').parent().show();
-            $('#a01').one('click', function(){
-                if (typeof(Storage) !== "undefined") {
-                    localStorage.setItem("_resth", Date.now()+21600000);
-                }
-            });
-            $('#a02').on('click', function(){
-                $('#info-msg').hide();
-                _app.send(7,"fix thumbnail loading",window.location.pathname);
-                setTimeout(function() {
-                    for(var i = 0, j = unloadedImages.length; i < j; i++){
-                        unloadedImages[i].src = unloadedImages[i].src + "?r=1";
-                    }
-                }, 1000);
-            });
-        }
+        return datadomain + "search.json?q=" + query.toLowerCase() + "&cat=" + cat + "&start=" + (pagenum - 1);
     }
 
     function buildPaginationInf(page, path, next){

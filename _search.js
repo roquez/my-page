@@ -42,13 +42,13 @@
                 path = path1 + "/everywhere" + path2;
                 break;
                 case "1":
-                path = path1 + "/men_and_animals" + path2;
+                path = path1 + "/category_1" + path2;
                 break;
                 case "2":
-                path = path1 + "/women_and_animals" + path2;
+                path = path1 + "/category_2" + path2;
                 break;
                 case "3":
-                path = path1 + "/animals" + path2;
+                path = path1 + "/category_3" + path2;
                 break;
                 default:
                 path = path1;
