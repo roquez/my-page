@@ -52,8 +52,8 @@
                     else{
                         tt = "Search results for: ";
                     }
-                    document.title = "Search \u2219 " + data.query + " - my-page";
-                    $("#s-title").text(tt + data.query).show();
+                    document.title = "Search \u2219 " + decodeURIComponent(query) + " - my-page";
+                    $("#s-title").text(tt + decodeURIComponent(query)).show();
                     buildPaginationInf(pagenum, pagepath, data.next);
                 }
                 if(documentReady){
