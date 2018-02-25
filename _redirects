@@ -1,5 +1,5 @@
-http://beastfree.netlify.com/   https://beastfree.netlify.com/
-http://beastfree.netlify.com/*  https://beastfree.netlify.com/:splat
+#http://beastfree.netlify.com/   https://beastfree.netlify.com/
+#http://beastfree.netlify.com/*  https://beastfree.netlify.com/:splat
 /men_and_animals/*    /browse.html   200
 /women_and_animals/*  /browse.html   200
 /animals/*            /browse.html   200
