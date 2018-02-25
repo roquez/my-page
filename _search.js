@@ -53,7 +53,6 @@
                 default:
                 path = path1;
             }
-            _app.send(4,query,window.location.pathname,function(){window.location.href = path});
         }
     }
 })();
