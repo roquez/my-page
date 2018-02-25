@@ -1,7 +1,4 @@
 (function(){
-    if(!_app.allowed){
-        return;
-    }
     var cat, pagenum, pagepath, query, url = window.location.pathname, documentReady = false, thAlertVisible = false, unloadedImages = [];
     var dataUrl, retried = false, timeout = 2000;
     var pageRegex = /\/search\/(\w+)\/query\/([^\/]+)/.exec(url);

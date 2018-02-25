@@ -1,7 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    if(!_app.allowed){
-        return;
-    }
     var cat, pagenum, pagepath, url = window.location.pathname, thAlertVisible = false, unloadedImages = [];
     var dataUrl, retried = false, timeout = 2000;
     pagepath = /\/\w+/.exec(url)[0];
