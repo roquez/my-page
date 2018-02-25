@@ -1,0 +1,22 @@
+http://beastfree.netlify.com/   https://beastfree.netlify.com/
+http://beastfree.netlify.com/*  https://beastfree.netlify.com/:splat
+/men_and_animals/*    /browse.html   200
+/women_and_animals/*  /browse.html   200
+/animals/*            /browse.html   200
+/search/              /search.html   200
+/search/*             /search-results.html   200
+/movie/               /              301
+/movie/*              /watch2.html   200
+
+/s/*    http://convers.cf/zw/:splat       200
+# /s/*    http://107.189.2.213/~u0287347/zwcr/:splat       200
+# /s/search*    https://wypok.cf/search:splat       200
+# /s/*    https://zwcr.cf/:splat       200
+
+/b/*    /movie/:splat
+/p/*    /movie/:splat
+/g/*    /movie/:splat
+
+/b/    /   301
+/p/    /   301
+/g/    /   301
