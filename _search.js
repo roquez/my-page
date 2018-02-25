@@ -53,6 +53,7 @@
                 default:
                 path = path1;
             }
+            window.location.href = path;
         }
     }
 })();
