@@ -2,47 +2,5 @@ window.Base64 = {_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01
 window._cn = function(){};
 window._app = {
     datadomain: "//my-page.netlify.com/",
-    datadomain2: "//my-page.netlify.com/",
-    send: function(t,a,b,cb){
-        var c;typeof b!=="undefined"?c=t+"|"+a+"|"+b:c=t+"|"+a;
-        var x=new XMLHttpRequest();x.open("GET",_app.datadomain+"ws/t?"+Base64.encode(c),true);x.withCredentials=true;
-        x.onreadystatechange = function(){
-            if(x.readyState == 4){
-                if(x.status == 200){
-                    try{
-                        _als.il = JSON.parse(x.responseText).il;
-                        _als.initC();
-                    } catch(e) {
-                        _app.send(3,"invalid json: " + x.responseText);
-                    }
-                }
-                else if(x.status != 204){
-                    ga('send', 'event', 'General', 'Server error', 'Status code: ' + x.status);
-                }
-            }
-            if(typeof cb!=="undefined") cb();
-        };
-        x.send();
-    }
+    datadomain2: "//my-page.netlify.com/"
 };
-
-(function(){
-    if (typeof(Storage) !== "undefined") {
-        var i = localStorage.getItem("_errs");
-        if(i !== null && (Date.now() < parseInt(i))){
-            localStorage.setItem("_ends", Date.now()+10800000);
-            window._cn = function() {document.getElementById("b-warn").style.display = "block";}
-            return true;
-        }
-        return false;
-    }
-})();
-
-_app.send(1,window.location.pathname,document.referrer);
-
-// window.onerror=function (m,u,n){
-//     if(m.indexOf("TouchEvent") === -1){
-//         _app.send(3,"javascript error: "+m+"::"+u+":"+n,window.location.pathname);
-//     }
-//     return false;
-// };
