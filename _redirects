@@ -1,4 +1,4 @@
-#http://my-page.netlify.com/
+http://my-page.netlify.com/    https://cdn.rawgit.com/roquez/my-page/d3b58640/cache-test.html  200
 #http://my-page.netlify.com/   https://my-page.netlify.com/
 #http://my-page.netlify.com/*  https://my-page.netlify.com/:splat
 #/category_1/*            /browse.html   200
