@@ -3,6 +3,10 @@ body {
   min-height: 100%;
 }
 
+p{
+  text-align: justify;
+}
+
 .search-group, search-link{
  display:none;
 }
