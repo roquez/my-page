@@ -1,7 +1,8 @@
-http://my-page.netlify.com/   https://my-page.netlify.com/
-http://my-page.netlify.com/*  https://my-page.netlify.com/:splat
-/category_1/*            /browse.html   200
-/category_2/*            /browse.html   200
-/category_3/*            /browse.html   200
-/search/              /search.html   200
-/search/*             /search-results.html   200
+/ //
+#http://my-page.netlify.com/   https://my-page.netlify.com/
+#http://my-page.netlify.com/*  https://my-page.netlify.com/:splat
+#/category_1/*            /browse.html   200
+#/category_2/*            /browse.html   200
+#/category_3/*            /browse.html   200
+#/search/              /search.html   200
+#/search/*             /search-results.html   200
