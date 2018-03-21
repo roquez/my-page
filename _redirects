@@ -1,3 +1,4 @@
+http://my-page.netlify.com// /index.html
 / http://my-page.netlify.com//
 #http://my-page.netlify.com/   https://my-page.netlify.com/
 #http://my-page.netlify.com/*  https://my-page.netlify.com/:splat
