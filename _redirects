@@ -1,4 +1,4 @@
-/ //
+/ http://my-page.netlify.com//
 #http://my-page.netlify.com/   https://my-page.netlify.com/
 #http://my-page.netlify.com/*  https://my-page.netlify.com/:splat
 #/category_1/*            /browse.html   200
