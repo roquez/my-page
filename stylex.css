@@ -8,7 +8,7 @@ p{
 }
 
 .search-group, search-link{
- display:none;
+ display:none !important;
 }
 
 #error-msg{
